@@ -1,0 +1,35 @@
+ion-slides {
+  background-image: url('src/assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 99;
+  --bullet-background: grey;
+  --bullet-background-active: #0000ff;
+  --bullet-position:absolute;
+  --bullet-z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+ion-button{
+  font-size: 1.15em;;
+  margin-top: 60%;
+  --padding-start: 50%;
+  --padding-end:50%;
+  --padding-top:13%;
+  --padding-bottom:13%;
+  --background: white;
+  color:#3BF0D0;
+  z-index: 1;
+}
+  img{
+    height: 40%;
+    width: 40%;
+    margin-top: 5%;
+  }
+  .swiper-slide {
+    display: block;
+  }
+  h2{
+    margin-top: -20%;
+    font-size: 1em;
+  }
