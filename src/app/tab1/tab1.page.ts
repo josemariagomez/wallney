@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  ngOnInit(){
+    this.router.navigate(['./slider/slider.module']);
+  }
 
 }

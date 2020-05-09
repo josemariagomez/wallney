@@ -12,7 +12,4 @@ export class SliderPage implements OnInit {
 
   ngOnInit() {
   }
-  sliderNext(){
-    this.sliderNext();
-  }
 }
