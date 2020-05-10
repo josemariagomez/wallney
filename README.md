@@ -6,7 +6,7 @@ de ahorro el cual tu eliges.
 ¿Te parece aburrido? Pues no te preocupes ahora puedes crear un grupo con tus amigos y competir entre vosotros a ver quien es el 
 más ahorrador.
 
-<a href="https://youtu.be/XzsCSpO4X5o"></a>
+Video mostrando demo de al App <a href="https://youtu.be/XzsCSpO4X5o"> aquí </a>
 
 Hemos utilizado para hacer la aplicación la documentación de ionic:
 <a href="https://ionicframework.com/docs">Documentación de Ionic</a>
