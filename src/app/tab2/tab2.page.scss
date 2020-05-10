@@ -1,3 +1,8 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-content{
+  --background: #fff;
+  --background: none;
+  background-image: url('../../assets/img/fondo.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

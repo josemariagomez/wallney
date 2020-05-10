@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ingresos',
@@ -13,7 +14,7 @@ export class IngresosPage implements OnInit {
     desc: 'Entrada WBF devuelta'
   };
 
-  constructor() {
+  constructor(private router: Router) {
     for (let i = 0; i < 30; i++) {
       this.items.push( this.item );
     }
@@ -38,5 +39,7 @@ export class IngresosPage implements OnInit {
 
   ngOnInit() {
   }
-
+  goBack(){
+    this.router.navigateByUrl('/')
+  }
 }

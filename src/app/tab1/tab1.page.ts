@@ -12,5 +12,10 @@ export class Tab1Page {
 
   ngOnInit(){
   }
-
+  goGastos(){
+    this.router.navigateByUrl('/gastos')
+  }
+  goIngresos(){
+    this.router.navigateByUrl('/ingresos')
+  }
 }

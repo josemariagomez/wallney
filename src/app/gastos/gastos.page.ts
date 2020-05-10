@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gastos',
@@ -13,7 +14,7 @@ export class GastosPage implements OnInit {
     desc: 'Burger king con Clara'
   };
 
-  constructor() {
+  constructor(private router: Router) {
     for (let i = 0; i < 30; i++) {
       this.items.push( this.item );
     }
@@ -37,6 +38,9 @@ export class GastosPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+  goBack(){
+    this.router.navigateByUrl('/')
   }
 
 }
