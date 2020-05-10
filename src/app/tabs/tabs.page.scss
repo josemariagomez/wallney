@@ -1,1 +1,17 @@
+ion-tabs, ion-tab-button {
+    --border:none;
+    border:none;
+}
+ion-tab-bar {
+    --background: white;
+    --color-selected: #3BF0D0;
+    --border: none;
+    border:none;
+}
+.header-md::after, .tabs-md[tabsPlacement=“top”] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement=“bottom”] > .tabbar::before {
+    background-image: none;
+}
 
+.tab-logo {
+    width: 2.5rem;
+}
