@@ -59,6 +59,7 @@ a {
         .months {
             display: flex;
             flex-direction: row;
+            text-align: center;
             justify-content: space-between;
             .card-col {
                 width: 100%;
