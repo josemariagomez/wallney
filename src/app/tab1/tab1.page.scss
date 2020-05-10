@@ -71,7 +71,7 @@ ion-content{
           }
           .money {
               font-size: 2rem;
-              padding: 0;
+              padding: 0.5rem 0;
               margin: 0;
           }
           .months-text {
@@ -93,6 +93,9 @@ ion-content{
         span {
             font-weight: bold;
         }
+    }
+    p:first-child {
+      padding-bottom: 0.5rem;
     }
 }
 }
