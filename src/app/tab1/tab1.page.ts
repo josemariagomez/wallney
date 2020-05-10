@@ -11,7 +11,6 @@ export class Tab1Page {
   constructor(private router: Router) {}
 
   ngOnInit(){
-    //this.router.navigate(['./slider/slider.module']);
   }
 
 }
