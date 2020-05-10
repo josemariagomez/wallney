@@ -1,3 +1,31 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-content{
+  --background: #fff;
+  --background: none;
+  background-image: url('../../assets/img/fondo.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content{
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  text-align: right;
+  color: white;
+}
+.right{
+  text-align: start;
+}
+p{
+  color: white;
+}
+.table1 {
+  --ion-grid-padding: -50%;
+}
+.table2{
+  color: #3BF0D0;
+  text-align: center;
+}
+.table2 p {
+  color: #3BF0D0;
 }
