@@ -1,112 +1,74 @@
 <ion-content [fullscreen]="true">
-  <!--<ion-button expand="full"  href="/slider">Slider</ion-button>-->
   <div class="content">
     <p class="date"> 01 may. - 09 may.</p>
-    <ion-grid fixed class="table1">
-      <ion-row>
-        <ion-col size="6" class="right">
-          <h1><b>GASTOS</b></h1>
-        </ion-col>
-        <ion-col size="6">
-          <h1><b>104,38€</b></h1>
-        </ion-col>
-        <ion-col size="6" class="right">
-          <h1><b>INGRESOS</b></h1>
-        </ion-col>
-        <ion-col size="6">
-          <h1><b>1037,29€</b></h1>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-grid fixed class="table2">
-              <ion-row>
-                <ion-col size="6" class="right">
-                  <h1><b>932,91€</b></h1>
-                </ion-col>
-                <ion-col size="6">
-                  <h1><b>200€</b></h1>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col size="6" class="right">
-                  <h1><b>AHORRO</b></h1>
-                </ion-col>
-                <ion-col size="6">
-                  <h1><b>META</b></h1>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <p>Has ahorrado <b>362,20€</b> más que el mes pasado <br />¡Estás consiguiendo tu meta de ahorros!</p>
-              </ion-row>
-            </ion-grid>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-card>
-          <ion-grid fixed class="table2">
-            <ion-row>
-              <ion-col size="6">
-                <h6><b>Último gasto</b></h6>
-              </ion-col>
-              <ion-col size="6">
-                <p>Ver gastos</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="6">
-                <h1><b>14,30€</b></h1>
-              </ion-col>
-              <ion-col size="6">
-                <p>Burguer King</p>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card>
-      </ion-row>
-      <ion-row>
-        <ion-card>
-          <ion-grid fixed class="table2">
-            <ion-row>
-              <ion-col size="6">
-                <h6><b>Último ingreso</b></h6>
-              </ion-col>
-              <ion-col size="6">
-                <p>Ver ingresos</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="6">
-                <h1><b>33,40€</b></h1>
-              </ion-col>
-              <ion-col size="6">
-                <p>Devolución entrada WBF</p>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card>
-      </ion-row>
-      <ion-row>
-        <ion-card>
-          <ion-grid class="table2">
-            <ion-row>
-              <ion-col>
-                <h6><b>Ahorro del mes pasado</b></h6>
-              </ion-col>
-              <ion-col>
-                <p>Ver ahorros</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <h1><b>570,71€</b></h1>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card>
-      </ion-row>
-    </ion-grid>
+    <div class="cabecera">
+      <div class="card-col">
+        <p class="money-g">104,38€</p>
+        <p class="g">Gastos</p>
+      </div>
+      <div class="card-col">
+        <p class="money-i">1037,29€</p>
+        <p class="i">Ingresos</p>
+      </div>
+    </div>
+    <div class="card-1">
+      <div class="card main-card">
+        <div class="months">
+          <div class="card-col">
+            <p class="money">932,91€</p>
+            <p class="months-text">Ahorro</p>
+          </div>
+          <div class="card-col">
+            <p class="money">200€</p>
+            <p class="months-text">Meta</p>
+          </div>
+        </div>
+        <div class="sentence">
+          <p>Has ahorrado <b>362,20€</b> más que el mes pasado <br/><br/>¡Estás consiguiendo tu meta
+            de ahorros!</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-2">
+      <div class="card main-card">
+        <div class="months">
+          <div class="card-col">
+            <p class="text-m">Último gasto</p>
+            <p class="money">14,30€</p>
+          </div>
+        </div>
+        <div class="sentence">
+          <p class="gastos">Ver gastos</p>
+          <p class="gasto">Buguer King con Clara</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-3">
+      <div class="card main-card">
+        <div class="months">
+          <div class="card-col">
+            <p class="text-m">Último ingreso</p>
+            <p class="money">33,40€</p>
+          </div>
+        </div>
+        <div class="sentence">
+          <p class="ingresos">Ver ingresos</p>
+          <p class="ingreso">Devolución entrada WBF</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-4">
+      <div class="card main-card">
+        <div class="months">
+          <div class="card-col">
+            <p class="text-a">Ahorro mes pasado</p>
+            <p class="money">570,71€</p>
+          </div>
+        </div>
+        <div class="sentence">
+          <p class="ahorros">Ver ahorros</p>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
