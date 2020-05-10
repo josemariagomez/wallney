@@ -12,6 +12,14 @@ ion-content{
   width: 100%;
   text-align: right;
   color: white;
+  display: flex;
+  flex-direction: column;
+}
+.cab-col{
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
 }
 .right{
   text-align: start;
@@ -32,11 +40,9 @@ ion-content{
   color: #3BF0D0;
 }
 .card-1{
-  position: absolute;
-  width: 85%;
-  height: 23%;
-  top: 22%;
-
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
   background: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -49,6 +55,7 @@ ion-content{
   .months {
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       .card-col {
           width: 100%;
@@ -63,173 +70,115 @@ ion-content{
           }
           .money {
               font-size: 2rem;
-              padding: 1rem 0;
+              padding: 0;
+              margin: 0;
           }
           .months-text {
               font-size: 1.3rem;
               text-transform: uppercase;
+              padding: 0;
+              margin: 0;
           }
       }
   } 
-  .sentence p{
-    font-size: 0.95rem;
+  .sentence {
+    width: 100%;
+    padding: 0 0.5rem;
+    p {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin:0;
+        span {
+            font-weight: bold;
+        }
+    }
 }
 }
 .cabecera{
     display: flex;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
     color: #FFFFFF;
     font-size: 1.5rem;
     text-transform: uppercase;
   .g{
-    position: absolute;
-    left: 13%;
-    top: 7%;
-    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    
     font-weight: bold;
-    line-height: 80%;
+    margin: 0;
   }
   .money-g{
-    position: absolute;
-    right: 13%;
-    top: 7%;
-    font-style: normal;
+    display: flex;
+    padding: 0 1rem;
+    
     font-weight: bold;
-    line-height: 80%;
+    margin: 0;
   }
   .i{
-    position: absolute;
-    left: 13%;
-    top: 13%;
-    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    
     font-weight: bold;
-    line-height: 80%;
     
   }
   .money-i{
-    position: absolute;
-    right: 13%;
-    top: 13%;
-    font-style: normal;
+    display: flex;
+    padding: 0 1rem;
+    
     font-weight: bold;
-    line-height: 80%;
   }
 }
 .card-2{
-  position: absolute;
-  width: 85%;
-  height: 13%;
-  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem ;
   background: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   color: #3BF0D0;
+  align-items: center;
+  .card-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin:0;
+    padding:0;
+    .card-col{
+      margin:0;
+      padding:0;
+      p{
+        margin:0;
+        padding:0;
+      }
+      .text-m{
+        font-weight: bold;
+      }
+      .money{
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  }
+}
 
-  .card-col {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    p {
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-    }
-    .text-m {
-    position: absolute;
-    left: 8%;
-    top: 20%;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 80%;
-    }
-    .money {
-      position: absolute;
-      left: 8%;
-      top: 35%;
-      font-style: normal;
-      font-weight: bold;
-      line-height: 80%;
-    }
-  }
-  .gastos{
-    position: absolute;
-    right: 8%;
-    top: 6%;
-    font-style: normal;
-    line-height: 80%;
-    }
-    .gasto{
-      position: absolute;
-      right: 8%;
-      top: 41%;
-      font-style: normal;
-      line-height: 80%;
-    }
-}
-.card-3{
-  position: absolute;
-  width: 85%;
-  height: 13%;
-  top: 68%;
-  background: #FFFFFF;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  color: #3BF0D0;
-  .card-col {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    p {
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-    }
-    .text-m {
-    position: absolute;
-    left: 8%;
-    top: 20%;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 80%;
-    }
-    .money {
-      position: absolute;
-      left: 8%;
-      top: 35%;
-      font-style: normal;
-      font-weight: bold;
-      line-height: 80%;
-    }
-  }
-  .ingresos{
-    position: absolute;
-    right: 8%;
-    top: 6%;
-    font-style: normal;
-    line-height: 80%;
-    }
-    .ingreso{
-      position: absolute;
-      right: 8%;
-      top: 41%;
-      font-style: normal;
-      line-height: 80%;
-    }
-}
 .card-4{
-  position: absolute;
-  width: 85%;
-  height: 13%;
-  top: 85%;
+  display:flex;
+  flex-direction: column;
   background: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   color: #3BF0D0;
+  margin-top: 1rem;
+  padding: 0.5rem;
   .card-col {
     width: 100%;
     display: flex;
@@ -237,23 +186,28 @@ ion-content{
     justify-content: center;
     align-items: center;
     .text-a{
-      position: absolute;
-      left: 8%;
-      top: 20%;
-      font-style: normal;
+      display:flex;
+      
       font-weight: bold;
-      line-height: 80%;
     }
     .money{
-      position: absolute;
-      top: 28%;
+      display:flex;
+      margin: 0;
+      padding:0;
+    }
+    .text{
+      display: flex;
+      padding: 0.5rem;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .ahorros{
+        display:flex;
+        
+        font-weight: normal;
+        }
     }
   }
-  .ahorros{
-    position: absolute;
-    right: 8%;
-    top: 6%;
-    font-style: normal;
-    line-height: 80%;
-    }
+  
 }
