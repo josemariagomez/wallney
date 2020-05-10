@@ -1,9 +1,8 @@
-<ion-slides>
-
-  <ion-slide pager="true">
+<ion-slides pager="true" [options]="slideOptsOne">
+  <ion-slide>
     <img src="assets\img\euro.png" />
     <h2>Gestiona tus gastos <br/> facilemente, <br/> <br/> ¡Cuidado con lo que gastas!</h2>    
-    <ion-button  shape="round" (click)="slideNext()">
+    <ion-button  shape="round" (click)="next()">
       <b> Siguiente </b>
     </ion-button>
   </ion-slide>
@@ -11,7 +10,7 @@
   <ion-slide>
     <img src="assets\img\mando.png" />
     <h2>Ponte metas, consigue <br/> ahorrar y luego, date un <br/> caprichito.<br/><br/></h2>
-    <ion-button  shape="round" (click)="slideNext()">
+    <ion-button  shape="round" (click)="next()">
       <b> Siguiente </b>
     </ion-button>
   </ion-slide>
@@ -19,8 +18,8 @@
   <ion-slide>
     <img src="assets\img\group.png" />
     <h2>Crea grupos de ahorros y <br/> motivaos unos a otros <br/> <br/> ¡Con amigos todo es mejor!</h2>
-    <ion-button  shape="round" (click)="slideNext()">
-      <b> Siguiente </b>
+    <ion-button  shape="round" (click)="finish()">
+      <b> Continuar </b>
     </ion-button>
   </ion-slide>
 </ion-slides>
