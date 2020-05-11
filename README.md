@@ -8,5 +8,7 @@ más ahorrador.
 
 Video mostrando demo de al App <a href="https://youtu.be/XzsCSpO4X5o"> aquí </a>
 
+Si desea probar una demo de la aplicación puede descargarse el archivo .apk que se encuentra <a href="https://github.com/josemariagomez/wallney">aquí</a>.
+
 Hemos utilizado para hacer la aplicación la documentación de ionic:
 <a href="https://ionicframework.com/docs">Documentación de Ionic</a>
