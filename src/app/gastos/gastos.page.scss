@@ -112,9 +112,19 @@ a {
                 font-size: 1.7rem;
                 font-weight: bold;
             }
-            .desc {
-                padding-left: 2rem;
-            }
+        }
+        .desc {
+            padding-left: 2rem;
+        }
+        .boton{
+            border-radius: 10px;
+            margin: 1.5rem 0.7em;
+        }
+        .right{
+            background-color: #FF6961;
+        }
+        .left{
+            background-color: #FDFD66;
         }
     }
 }
