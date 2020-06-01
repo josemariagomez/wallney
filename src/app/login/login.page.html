@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="content">
+    <img class="image" src="../../assets/img/logo.png" alt="">
+    <h1>Inicio de sesión</h1>
+    <ion-item>
+      <ion-input placeholder="Usuario o contraseña" type="text" expand="full"></ion-input>
+      <ion-icon name="mail" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Contraseña" [type]="passwordType" expand="full" clearOnEdit="true">
+      </ion-input>
+      <ion-icon [name]="passwordIcon" slot="end" (click)="togglePassword()"></ion-icon>
+    </ion-item>
+    <ion-button (click)="login()" expand="full" shape="round">
+      <strong>Login</strong>
+    </ion-button>
+    <p (click)="newPassword()">¿Olvidastes tu contraseña?</p><br />
+    <p class="register" (click)="goRegister()">Registro</p>
+  </div>
+</ion-content>

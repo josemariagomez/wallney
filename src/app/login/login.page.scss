@@ -1,0 +1,43 @@
+ion-content{
+    --background: #fff;
+    --background: none;
+    background-color: #3BF0D0;
+    background-size: cover;
+    --height: 100vh;
+    height: 100vh;
+}
+.content{
+    display: flex;
+    display: inline-block;
+    margin: 25% 10%;
+    height: 70%;
+    width: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    .image{
+        display: flex;
+        padding: 2rem 6.5rem;
+    }
+    h1{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    ion-item{
+        --background: rgb(228, 228, 228);
+        --border-radius: 2rem ;
+        --highlight-color-focused: none;
+        padding: 0.5rem 1rem;
+    }
+    ion-button{
+        margin: 2rem 3rem 0 3rem;
+        --background: #3BF0D0;
+    }
+    p{
+        text-align: center;    
+        font-size: 0.8rem;
+    }
+    .register{
+        padding-top: 3rem;
+    }
+}
