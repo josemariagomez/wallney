@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'gastos-modal',
+    loadChildren: () => import('./gastos-modal/gastos-modal.module').then( m => m.GastosModalPageModule)
+  },
+  {
+    path: 'rest-password',
+    loadChildren: () => import('./pages/rest-password/rest-password.module').then( m => m.RestPasswordPageModule)
   }
 
 

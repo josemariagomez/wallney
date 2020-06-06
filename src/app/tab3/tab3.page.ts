@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage'
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private storage: Storage
+    ) {}
+
+  async logOut(){
+    this.storage.set('user', '');
+    this.storage.set('token', '');
+    this.router.navigateByUrl('/login');
+  }
 
 }

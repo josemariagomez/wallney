@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GastosModalPage } from '../gastos-modal/gastos-modal.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gastos',
@@ -14,10 +16,17 @@ export class GastosPage implements OnInit {
     desc: 'Burger king con Clara'
   };
 
-  constructor(private router: Router) {
+  constructor(
+
+    private router: Router,
+    public modalController: ModalController
+
+    ) {
+
     for (let i = 0; i < 30; i++) {
       this.items.push( this.item );
     }
+
   }
 
   doInfinite(infiniteScroll) {
@@ -41,6 +50,16 @@ export class GastosPage implements OnInit {
   }
   goBack(){
     this.router.navigateByUrl('/')
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: GastosModalPage,
+      cssClass: 'my-custom-class',
+      /*enterAnimation: 'modal-slide-in',
+      leaveAnimation: 'modal-slide-out'*/
+    });
+    return await modal.present();
   }
 
 }
