@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
 import { ApiService } from '../services/api.service';
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-gastos-modal',
-  templateUrl: './gastos-modal.page.html',
-  styleUrls: ['./gastos-modal.page.scss'],
+  selector: 'app-ingresos-modal',
+  templateUrl: './ingresos-modal.page.html',
+  styleUrls: ['./ingresos-modal.page.scss'],
 })
-export class GastosModalPage implements OnInit {
+export class IngresosModalPage implements OnInit {
 
   date: String = new Date().toISOString();
   title: any;
@@ -28,9 +28,8 @@ export class GastosModalPage implements OnInit {
       'dismissed': true
     });
   }
-  createExpense(){
+  createIncome(){
     this.amount = this.amount * 100;
-    console.log(this.date)
     this.api.createExpense(this.title, this.description, this.amount, this.date)
     .then((response) => {
       this.presentToast(response.toString());
@@ -49,4 +48,5 @@ export class GastosModalPage implements OnInit {
     });
     toast.present();
   }
+
 }

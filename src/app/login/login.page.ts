@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { ToastController } from '@ionic/angular';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage';
 import { LoginPageModule } from './login.module';
 
 @Component({
@@ -71,15 +71,7 @@ export class LoginPage implements OnInit {
   }
 
   resetPassword(){
-    this.api.resetpassword(this.email)
-    .then(async (response) => {
-      await this.presentToast('Revise el correo, le hemos enviado un correo para cambiar de contraseña');
-      this.router.navigate(['/login'])
-    })
-    .catch(async (error) => {
-      await this.presentToast('Error al enviar un correo para reestrablecer la contraseña, por favor vuelva a escribir su email con el que tienes vinculada tu cuenta.');
-      console.log(error)      
-    });
+    this.router.navigateByUrl('/rest-password')
   }
 
   async logged(){

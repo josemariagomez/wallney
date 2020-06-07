@@ -55,9 +55,7 @@ export class GastosPage implements OnInit {
   async presentModal() {
     const modal = await this.modalController.create({
       component: GastosModalPage,
-      cssClass: 'my-custom-class',
-      /*enterAnimation: 'modal-slide-in',
-      leaveAnimation: 'modal-slide-out'*/
+      cssClass: 'half-modal'
     });
     return await modal.present();
   }

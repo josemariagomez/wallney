@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { GastosModalPageModule } from './gastos-modal/gastos-modal.module';
+import { IngresosModalPageModule } from './ingresos-modal/ingresos-modal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { GastosModalPageModule } from './gastos-modal/gastos-modal.module';
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    GastosModalPageModule
+    GastosModalPageModule,
+    IngresosModalPageModule
   ],
   providers: [
     StatusBar,

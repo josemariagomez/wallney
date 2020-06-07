@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'rest-password',
     loadChildren: () => import('./pages/rest-password/rest-password.module').then( m => m.RestPasswordPageModule)
+  },
+  {
+    path: 'ingresos-modal',
+    loadChildren: () => import('./ingresos-modal/ingresos-modal.module').then( m => m.IngresosModalPageModule)
   }
 
 

@@ -1,12 +1,39 @@
 ion-content{
   --background: #fff;
   --background: none;
-  background-image: url('../../assets/img/fondo.png');
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-color: #3BF0D0;
   background-size: cover;
+  --height: 100vh;
+  height: 100vh;
 }
-ion-button{
-  --background: rgb(209, 209, 209);
-  border-radius: 5rem;
+.content{
+  display: flex;
+  display: inline-block;
+  margin: 25% 10%;
+  height: 80%;
+  width: 80%;
+  background-color: white;
+  border-radius: 1rem;
+  .image{
+      display: flex;
+      padding: 2rem 6.5rem;
+      height: 8rem;
+      width: 8rem;
+      //color: #CFCDCE;
+  }
+  h1{
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+  }
+  ion-item{
+      --background: rgb(228, 228, 228);
+      --border-radius: 2rem ;
+      --highlight-color-focused: none;
+      padding: 0.5rem 1rem;
+  }
+  ion-button{
+      margin: 2rem 3rem 0 3rem;
+      --background: #3BF0D0;
+  }
 }

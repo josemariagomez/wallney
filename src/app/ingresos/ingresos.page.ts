@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { IngresosModalPage } from '../ingresos-modal/ingresos-modal.page';
 
 @Component({
   selector: 'app-ingresos',
@@ -14,7 +16,10 @@ export class IngresosPage implements OnInit {
     desc: 'Entrada WBF devuelta'
   };
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public modalController: ModalController
+    ) {
     for (let i = 0; i < 30; i++) {
       this.items.push( this.item );
     }
@@ -39,6 +44,14 @@ export class IngresosPage implements OnInit {
 
   ngOnInit() {
   }
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: IngresosModalPage,
+      cssClass: 'half-modal'
+    });
+    return await modal.present();
+  }
+
   goBack(){
     this.router.navigateByUrl('/')
   }
