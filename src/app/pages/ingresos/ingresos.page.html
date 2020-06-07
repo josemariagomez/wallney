@@ -1,0 +1,50 @@
+<ion-content class="ion-padding">
+  <div class="page">
+    <div class="fixed">
+      <div class="nav">
+        <a class="back-btn" (click)="goBack()"><img src="../../../assets/img/back-button.png" alt=""></a>
+        <a class="add-btn" (click)="presentModal()"><img src="../../../assets/img/add-button.png" alt=""></a>
+      </div>
+      <div class="page-data">
+        <p class="page-name">Ingresos</p>
+        <p class="page-date">01 may. - 09 may.</p>
+      </div>
+      <div class="content">
+        <div class="card main-card">
+          <div class="months">
+            <div class="card-col">
+              <p class="money">20€</p>
+              <p class="month">Mes pasado</p>
+            </div>
+            <div class="card-col">
+              <p class="money">50€</p>
+              <p class="month">Este mes</p>
+            </div>
+          </div>
+          <div class="sentence">
+            <p>Has ingresado <span class="money">30€</span> más que el mes pasado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <ion-list class="gastos">
+        <ion-item-sliding  *ngFor="let i of items">
+          <ion-item class="gasto"><div class="money">{{i.money}}€</div><div class="desc">{{i.desc}}sdfbsdfb sfbwebebw</div></ion-item>
+          
+          <ion-item-options side="start" id="left">
+            <ion-item-option class="boton left">Editar</ion-item-option>
+          </ion-item-options>
+    
+          <ion-item-options side="end" id="right">
+            <ion-item-option class="boton right">Borrar</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>

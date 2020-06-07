@@ -1,0 +1,130 @@
+ion-content{
+    --background: #fff;
+    --background: none;
+    background-image: url('../../../assets/img/fondo.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    --height: 100vh;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.back-btn {
+    width: 1rem;
+}
+.add-btn {
+    width: 1.6rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+}
+.page-data {
+    padding: 0 2rem;
+    .page-name {
+        font-weight: bold;
+        color: white;
+        font-size: 1.3rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .page-date {
+        color: white;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+}
+
+.content {
+    padding: 0 1rem;
+    max-height: 100%;
+    .card {
+        width: 100%;
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+        color: #3BF0D0;
+    }
+    
+    .main-card {
+        .months {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-between;
+            .card-col {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                p {
+                    font-weight: bold;
+                    padding: 0;
+                    margin: 0;
+                }
+                .money {
+                    font-size: 2rem;
+                    padding: 1rem 0;
+                }
+                .month {
+                    font-size: 1.2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .sentence {
+            width: 100%;
+            p {
+                width: 100%;
+                text-align: center;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .gastos {
+        background-color: transparent;
+        padding: 0 0.5rem;
+
+        .gasto {
+            background-color: #FFF;
+            border-radius: 10px;
+            padding: 1.2rem;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+            color: #3BF0D0;
+            margin: 1.5rem 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .money {
+                font-size: 1.7rem;
+                font-weight: bold;
+            }
+            .desc {
+                padding-left: 2rem;
+            }
+        }
+        .boton{
+            border-radius: 10px;
+            margin: 1.5rem 0.7em;
+        }
+        .right{
+            background-color: #FF6961;
+        }
+        .left{
+            background-color: #FDFD66;
+        }
+    }
+}

@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
-import { GastosModalPageModule } from './gastos-modal/gastos-modal.module';
-import { IngresosModalPageModule } from './ingresos-modal/ingresos-modal.module';
+import { GastosModalPageModule } from './modals/gastos-modal/gastos-modal.module';
+import { IngresosModalPageModule } from './modals/ingresos-modal/ingresos-modal.module';
 
 @NgModule({
   declarations: [AppComponent],

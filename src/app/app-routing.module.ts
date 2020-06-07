@@ -5,35 +5,36 @@ import { SliderGuard } from './guards/slider.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+    loadChildren: () => import('./pages/tabs/tabs/tabs.module').then(m => m.TabsPageModule),
     canActivate: [SliderGuard]
   },
   {
     path: 'slider',
-    loadChildren: () => import('./slider/slider.module').then( m => m.SliderPageModule)
+    loadChildren: () => import('./pages/slider/slider.module').then( m => m.SliderPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'gastos',
-    loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
+    loadChildren: () => import('./pages/gastos/gastos.module').then( m => m.GastosPageModule)
   },
   {
     path: 'ingresos',
-    loadChildren: () => import('./ingresos/ingresos.module').then( m => m.IngresosPageModule)
-  },  {
+    loadChildren: () => import('./pages/ingresos/ingresos.module').then( m => m.IngresosPageModule)
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'gastos-modal',
-    loadChildren: () => import('./gastos-modal/gastos-modal.module').then( m => m.GastosModalPageModule)
+    loadChildren: () => import('./modals/gastos-modal/gastos-modal.module').then( m => m.GastosModalPageModule)
   },
   {
     path: 'rest-password',
@@ -41,7 +42,15 @@ const routes: Routes = [
   },
   {
     path: 'ingresos-modal',
-    loadChildren: () => import('./ingresos-modal/ingresos-modal.module').then( m => m.IngresosModalPageModule)
+    loadChildren: () => import('./modals/ingresos-modal/ingresos-modal.module').then( m => m.IngresosModalPageModule)
+  },
+  {
+    path: 'information-modal',
+    loadChildren: () => import('./modals/information-modal/information-modal.module').then( m => m.InformationModalPageModule)
+  },
+  {
+    path: 'editar-gasto',
+    loadChildren: () => import('./modals/editar-gasto/editar-gasto.module').then( m => m.EditarGastoPageModule)
   }
 
 
