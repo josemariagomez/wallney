@@ -6,6 +6,9 @@ ion-content{
   background-repeat: no-repeat;
   background-size: cover;
 }
+* {
+  color: #3BF0D0;
+}
 .content{
   padding-right: 2rem;
   padding-left: 2rem;
@@ -100,6 +103,9 @@ ion-content{
 }
 }
 .cabecera{
+    * {
+      color: #FFFFFF;
+    }
     display: flex;
     flex-direction: column;
     color: #FFFFFF;

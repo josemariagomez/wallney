@@ -46,10 +46,16 @@ export class LoginPage implements OnInit {
   
   async login(){
     this.api.login(this.email, this.password)
-    .then((response) => {
-      this.storage.set('user', JSON.parse(JSON.stringify(response)).user);
-      this.storage.set('token', JSON.parse(JSON.stringify(response)).access_token);
-      this.router.navigate(['/tabs/tab1'])
+    .then(async (response) => {
+      console.log();
+      if (JSON.parse(JSON.stringify(response)).status_code == 500) {
+          await this.presentToast('Error al iniciar sesión');
+      }
+      if (JSON.parse(JSON.stringify(response)).status_code == 200) {
+          this.storage.set('user', JSON.parse(JSON.stringify(response)).user);
+          this.storage.set('token', JSON.parse(JSON.stringify(response)).access_token);
+          this.router.navigate(['/tabs/tab1'])
+      }
     })
     .catch(async (error) => {
       await this.presentToast('Error al iniciar sesión');
