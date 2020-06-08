@@ -1,0 +1,45 @@
+.modal{
+    .title{
+        text-align: center;
+        font-weight: bold;
+    }
+}
+.contenido{
+    padding:1.5rem;
+    .title{
+        margin: 0.7rem 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    }
+    .description{
+        height: 4rem;
+        overflow: scroll;
+        align-items: flex-start;
+        margin: 0.7rem 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    }
+    .amount{
+        margin: 0.7rem 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    }
+    .double{
+        display: flex;
+        justify-content: space-between;
+    }
+    .date{
+        margin: 0.7rem 0;
+        padding-top: 10px;
+        padding-right: 8px;
+        padding-bottom: 10px;
+        padding-left: 8px;
+    }
+    .right{
+        text-align: left;
+    }
+}
+ion-button{
+    margin: 2rem 3rem 0 3rem;
+    --background: #3BF0D0;
+}
