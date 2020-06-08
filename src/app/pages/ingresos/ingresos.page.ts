@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { IngresosModalPage } from '../../modals/ingresos-modal/ingresos-modal.page';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-ingresos',
@@ -11,48 +12,60 @@ import { IngresosModalPage } from '../../modals/ingresos-modal/ingresos-modal.pa
 export class IngresosPage implements OnInit {
 
   items = [];
-  item = {
-    money: '33,40',
-    desc: 'Entrada WBF devuelta'
-  };
+  currentPage;
+  lastPage;
 
   constructor(
     private router: Router,
-    public modalController: ModalController
-    ) {
-    for (let i = 0; i < 30; i++) {
-      this.items.push( this.item );
+    public modalController: ModalController,
+    public api: ApiService,
+    private toastController: ToastController
+    ) {}
+
+  async ngOnInit() {
+    this.addIncomes()
+  }
+
+  async doInfinite(infiniteScroll) {
+    if (this.lastPage != this.currentPage){
+      this.addIncomes(this.currentPage + 1);
     }
+    infiniteScroll.target.complete();
   }
 
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
-
-    let item = {
-      money: '33,40',
-      desc: 'Entrada WBF devuelta'
-    };
-    setTimeout(() => {
-      for (let i = 0; i < 30; i++) {
-        this.items.push( item );
-      }
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 500);
-  }
-
-  ngOnInit() {
-  }
   async presentModal() {
     const modal = await this.modalController.create({
       component: IngresosModalPage,
       cssClass: 'half-modal'
     });
+    modal.onDidDismiss().then((data)=>{
+      this.items = [];
+      this.addIncomes();
+    });
     return await modal.present();
+  }
+
+  async addIncomes(page = null){
+    let response = await this.api.getIncomes(page);
+    let responseJson = JSON.parse(JSON.stringify(response)).body
+    let incomes = responseJson.data;
+    incomes.forEach(element => {
+      this.items.push(element)
+    });
+    this.currentPage = responseJson.current_page;
+    this.lastPage = responseJson.last_page;
   }
 
   goBack(){
     this.router.navigateByUrl('/')
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      position: 'top',
+      duration: 2000
+    });
+    toast.present();
   }
 }
