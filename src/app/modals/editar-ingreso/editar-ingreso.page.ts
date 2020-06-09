@@ -12,7 +12,7 @@ export class EditarIngresoPage implements OnInit {
   @Input('title') title;
   @Input('description') description;
   @Input('amount') amount;
-  @Input('title') date;
+  @Input('date') date;
 
   constructor(
     private modalCtrl: ModalController
