@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { GastosModalPage } from '../../modals/gastos-modal/gastos-modal.page';
 import { ModalController } from '@ionic/angular';
 import { InformationModalPage } from 'src/app/modals/information-modal/information-modal.page';
+import { EditarGastoPage } from 'src/app/modals/editar-gasto/editar-gasto.page';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-gastos',
@@ -12,45 +14,37 @@ import { InformationModalPage } from 'src/app/modals/information-modal/informati
 export class GastosPage implements OnInit {
 
   items = [];
-  item = {
-    id:1,
-    money: '14,30',
-    desc: 'Burger king con Clara'
-  };
+  currentPage;
+  lastPage;
 
   constructor(
-
     private router: Router,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public api: ApiService
+    ) {}
 
-    ) {
-
-    for (let i = 0; i < 30; i++) {
-      this.items.push( this.item );
+  async doInfinite(infiniteScroll) {
+    if (this.lastPage != this.currentPage){
+      this.addExpenses(this.currentPage + 1);
     }
-
+    infiniteScroll.target.complete();
   }
 
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
-
-    let item = {
-      id:1,
-      money: '14,30',
-      desc: 'Burger king con Clara'
-    };
-    setTimeout(() => {
-      for (let i = 0; i < 30; i++) {
-        this.items.push( item );
-      }
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 500);
+  async ngOnInit() {
+    this.addExpenses();
   }
 
-  ngOnInit() {
+  async addExpenses(page = null){
+    let response = await this.api.getExpenses(page);
+    let responseJson = JSON.parse(JSON.stringify(response)).body
+    let incomes = responseJson.data;
+    incomes.forEach(element => {
+      this.items.push(element)
+    });
+    this.currentPage = responseJson.current_page;
+    this.lastPage = responseJson.last_page;
   }
+
   goBack(){
     this.router.navigateByUrl('/')
   }
@@ -63,10 +57,25 @@ export class GastosPage implements OnInit {
     return await modal.present();
   }
   
-  async showInfo(id:any){
+  async showInfo(id:any,title:any,description:any,amount:any,date:any){
+    console.log(id);
+    console.log(description);
+    console.log(amount);
     const modal = await this.modalController.create({
       component: InformationModalPage,
-      componentProps:{id:id},
+      componentProps:{id:id,title:title,description:description,amount:amount,date:date},
+      cssClass: 'half-modal'
+    });
+    return await modal.present();
+  }
+
+  async editExpense(id:any,title:any,description:any,amount:any,date:any){
+    console.log(id);
+    console.log(description);
+    console.log(amount);
+    const modal = await this.modalController.create({
+      component: EditarGastoPage,
+      componentProps:{id:id,title:title,description:description,amount:amount,date:date},
       cssClass: 'half-modal'
     });
     return await modal.present();

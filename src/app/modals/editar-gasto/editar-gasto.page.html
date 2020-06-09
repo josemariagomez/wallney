@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>editar-gasto</ion-title>
+<ion-header class="modal">
+  <ion-toolbar class="header">
+    <ion-title class="title">Editar Gasto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="contenido">
+    <div expand="full">
+      <ion-label><h2><b>Título</b></h2></ion-label>
+      <ion-input class="title" placeholder="{{ title }}" type="text" [(ngModel)]="title"></ion-input>
+    </div>
+    <div expand="full">
+      <ion-label><h2><b>Descripción</b></h2></ion-label>
+      <ion-input class="description" placeholder="{{ description }}" type="text" [(ngModel)]="description"></ion-input>
+    </div>
+    <div class="double">
+      <div class="left">
+        <ion-label><h2><b>Cantidad</b></h2></ion-label>
+        <ion-input class="amount" placeholder="{{ amount }}" type="number" [(ngModel)]="amount"></ion-input>
+      </div>
+      <div class="right">
+        <ion-label><h2><b>Fecha</b></h2></ion-label>
+        <ion-datetime  displayFormat="DD-MM-YYYY" class="date" value="dd-mm-YYYY" [(ngModel)]="date"></ion-datetime>
+      </div>
+    </div>
+    <ion-button (click)="createExpense()" expand="block" shape="round">
+      Editar Gasto
+    </ion-button>
+  </div>
 </ion-content>

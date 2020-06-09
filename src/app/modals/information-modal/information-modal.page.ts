@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 
 @Component({
   selector: 'app-information-modal',
@@ -7,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationModalPage implements OnInit {
 
-  title: any;
-  description: any;
-  amount: any;
-  date:any;
+  @Input('id') id;
+  @Input('title') title;
+  @Input('description') description;
+  @Input('amount') amount;
+  @Input('title') date;
 
   constructor() { }
 
   ngOnInit() {
-    
   }
-
 }
