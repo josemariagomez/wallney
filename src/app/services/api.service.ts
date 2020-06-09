@@ -68,4 +68,16 @@ export class ApiService {
       observe: 'response'
     }).toPromise();
   }
+
+  async getExpenses(page=null){
+    let token = await this.storage.get('token') 
+    let url = 'https://wallney.josegm.me/api/expenses';
+    if(page){
+      url = url + '?page=' + page
+    }
+    return this.http.get(url,{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
 }

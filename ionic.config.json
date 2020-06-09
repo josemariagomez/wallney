@@ -3,11 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "proxies": [
+  "proxies":[
     {
       "path": "/",
       "proxyUrl": "http://wallney.josegm.me/",
-      "rejectUnauthorized": false
+      "rejectUnauthorizated": false
     }
   ],
   "type": "angular"

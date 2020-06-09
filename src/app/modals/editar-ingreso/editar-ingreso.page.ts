@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -7,6 +7,12 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./editar-ingreso.page.scss'],
 })
 export class EditarIngresoPage implements OnInit {
+
+  @Input('id') id;
+  @Input('title') title;
+  @Input('description') description;
+  @Input('amount') amount;
+  @Input('title') date;
 
   constructor(
     private modalCtrl: ModalController

@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
 import { IngresosModalPage } from '../../modals/ingresos-modal/ingresos-modal.page';
 import { ApiService } from 'src/app/services/api.service';
+import { EditarGastoPage } from 'src/app/modals/editar-gasto/editar-gasto.page';
+import { EditarIngresoPage } from 'src/app/modals/editar-ingreso/editar-ingreso.page';
+import { InformationModalPage } from 'src/app/modals/information-modal/information-modal.page';
 
 @Component({
   selector: 'app-ingresos',
@@ -45,6 +48,18 @@ export class IngresosPage implements OnInit {
     return await modal.present();
   }
 
+  async editIncome(id:any,title:any,description:any,amount:any,date:any){
+    console.log(id);
+    console.log(description);
+    console.log(amount);
+    const modal = await this.modalController.create({
+      component: EditarIngresoPage,
+      componentProps:{id:id,title:title,description:description,amount:amount,date:date},
+      cssClass: 'half-modal'
+    });
+    return await modal.present();
+  }
+
   async addIncomes(page = null){
     let response = await this.api.getIncomes(page);
     let responseJson = JSON.parse(JSON.stringify(response)).body
@@ -67,5 +82,17 @@ export class IngresosPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  async showInfo(id:any,title:any,description:any,amount:any,date:any){
+    console.log(id);
+    console.log(description);
+    console.log(amount);
+    const modal = await this.modalController.create({
+      component: InformationModalPage,
+      componentProps:{id:id,title:title,description:description,amount:amount,date:date},
+      cssClass: 'half-modal'
+    });
+    return await modal.present();
   }
 }

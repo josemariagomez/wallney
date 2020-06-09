@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-editar-gasto',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarGastoPage implements OnInit {
 
-  constructor() { }
+  @Input('id') id;
+  @Input('title') title;
+  @Input('description') description;
+  @Input('amount') amount;
+  @Input('title') date;
+
+  constructor(
+    private modalCtrl: ModalController
+    ){}
 
   ngOnInit() {
+  }
+
+  dismiss() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
   }
 
 }

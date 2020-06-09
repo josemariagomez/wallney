@@ -12,6 +12,9 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { GastosModalPageModule } from './modals/gastos-modal/gastos-modal.module';
 import { IngresosModalPageModule } from './modals/ingresos-modal/ingresos-modal.module';
+import { EditarIngresoPageModule } from './modals/editar-ingreso/editar-ingreso.module';
+import { EditarGastoPageModule } from './modals/editar-gasto/editar-gasto.module';
+import { InformationModalPageModule } from './modals/information-modal/information-modal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +26,10 @@ import { IngresosModalPageModule } from './modals/ingresos-modal/ingresos-modal.
     AppRoutingModule,
     HttpClientModule,
     GastosModalPageModule,
-    IngresosModalPageModule
+    IngresosModalPageModule,
+    EditarIngresoPageModule,
+    EditarGastoPageModule,
+    InformationModalPageModule
   ],
   providers: [
     StatusBar,
