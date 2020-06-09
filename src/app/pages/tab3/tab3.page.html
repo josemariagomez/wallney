@@ -1,24 +1,80 @@
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="content">
-    <ion-icon class="image" name="person-circle-outline"></ion-icon>
-    <h1>Inicio de sesión</h1>
-    <ion-item>
-      <ion-input type="text" expand="full" [(ngModel)]="name"></ion-input>
-      <ion-icon name="mail" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" expand="full" [(ngModel)]="username"></ion-input>
-      <ion-icon name="mail" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" expand="full" [(ngModel)]="email"></ion-input>
-      <ion-icon name="mail" slot="end"></ion-icon>
-    </ion-item>
-    <ion-button (click)="update()" expand="full" shape="round" >
-      Actualizar datos
-    </ion-button>
-    <ion-button (click)="logOut()" expand="full" shape="round" >
-      Log out
-    </ion-button>
+    <p class="date"></p>
+    <div class="cabecera">
+      <div class="cab-col">
+        <p class="g">{{ user.name }}</p>
+      </div>
+      <div class="cab-col">
+        <p class="i">@{{ user.username }}</p>
+      </div>
+    </div>
+    <div class="card-2 main-card card" (click)="goGastos()">
+      <div class="card-row flex-center">
+        <div class="card-col">
+          <p class="gastos">Meta mensual</p>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="card-col">
+          <p class="money">14,30€</p>
+        </div>
+        <div class="card-col">
+        <p class="gasto">Editar</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-1">
+      <div class="card main-card">
+        <div class="card-row">
+          <div class="card-col">
+            <p class="text">Total gastado</p>
+          </div>
+          <div class="card-col">
+            <p class="money">14,30€</p>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="card-col">
+            <p class="text">Total ingresado</p>
+          </div>
+          <div class="card-col">
+            <p class="money">14,30€</p>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="card-col">
+            <p class="text">Total ahorrado</p>
+          </div>
+          <div class="card-col">
+            <p class="money">14,30€</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-2 main-card card">
+      <div class="card-row flex-center">
+        <div class="card-col">
+          <p class="text-m">Cambiar contraseña</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-buttons">
+      <div class="smal-btn">
+        <div class="card-small main-card card" (click)="logOut()">
+          <div class="card-row flex-center">
+            <p class="gastos">Cerrar sesión</p>
+          </div>
+        </div>
+      </div>
+      <div class="smal-btn">
+        <div class="card-small main-card card">
+          <div class="card-row flex-center">
+            <p class="gastos">Editar perfil</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>

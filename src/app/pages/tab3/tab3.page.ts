@@ -9,21 +9,23 @@ import { Storage } from '@ionic/storage'
 })
 export class Tab3Page {
 
-  email: any;
-  username: any;
-  name: any;
+  user = {
+    name: '',
+    username: '',
+    email: '',
+  };
 
   constructor(
     private router: Router,
     private storage: Storage
-    ) {}
+  ) {}
 
-    async ngOnInit(){
-      let user = await this.storage.get('user') 
-      this.email = user.email;
-      this.username = this.storage.get('username').toString;
-      this.name = this.storage.get('name').toString
-    }
+  async ngOnInit(){
+    let user = await this.storage.get('user') 
+    console.log(user);
+    
+    this.user = user;
+  }
 
   async logOut(){
     this.storage.set('user', '');
