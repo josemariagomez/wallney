@@ -49,9 +49,6 @@ export class IngresosPage implements OnInit {
   }
 
   async editIncome(id:any,title:any,description:any,amount:any,date:any){
-    console.log(id);
-    console.log(description);
-    console.log(amount);
     const modal = await this.modalController.create({
       component: EditarIngresoPage,
       componentProps:{id:id,title:title,description:description,amount:amount,date:date},
