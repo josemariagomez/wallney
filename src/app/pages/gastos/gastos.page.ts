@@ -55,6 +55,7 @@ export class GastosPage implements OnInit {
       cssClass: 'half-modal'
     });
     modal.onDidDismiss().then((data)=>{
+      this.items=[];
       this.addExpenses();
     });
     return await modal.present();
