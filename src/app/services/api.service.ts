@@ -80,4 +80,13 @@ export class ApiService {
       observe: 'response'
     }).toPromise();
   }
+
+  async getMainData(){
+    let token = await this.storage.get('token') 
+    let url = 'https://wallney.josegm.me/api/get-main-data';
+    return this.http.get(url,{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
 }

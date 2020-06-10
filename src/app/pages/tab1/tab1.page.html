@@ -4,28 +4,27 @@
     <div class="cabecera">
       <div class="cab-col">
         <p class="g">Gastos</p>
-        <p class="money-g">104,38€</p>
+        <p class="money-g">{{ data?.gastos }}€</p>
       </div>
       <div class="cab-col">
         <p class="i">Ingresos</p>
-        <p class="money-i">1037,29€</p>
+        <p class="money-i">{{ data?.ingresos }}€</p>
       </div>
     </div>
     <div class="card-1">
       <div class="card main-card">
         <div class="months">
           <div class="card-col">
-            <p class="money">932,91€</p>
+            <p class="money">{{ data?.main_card?.ahorro }}€</p>
             <p class="months-text">Ahorro</p>
           </div>
           <div class="card-col">
-            <p class="money">200€</p>
+            <p class="money">{{ data?.main_card?.meta }}€</p>
             <p class="months-text">Meta</p>
           </div>
         </div>
         <div class="sentence">
-          <p>Has ahorrado <span>362,20€</span> más que el mes pasado </p>
-          <p>¡Estás consiguiendo tu meta de ahorros!</p>
+          <p>¡Estás consiguiendo tu meta de ahorros!🎉</p>
         </div>
       </div>
     </div>
@@ -40,10 +39,10 @@
       </div>
       <div class="card-row">
         <div class="card-col">
-          <p class="money">14,30€</p>
+          <p class="money">{{ data?.gastos_card?.dinero }}€</p>
         </div>
         <div class="card-col">
-        <p class="gasto">Buguer King con Clara</p>
+        <p class="gasto">{{ data?.gastos_card?.mensaje }}</p>
         </div>
       </div>
     </div>
@@ -58,10 +57,10 @@
       </div>
       <div class="card-row">
         <div class="card-col">
-          <p class="money">33,30€</p>
+          <p class="money">{{ data?.ingreso_card?.dinero }}€</p>
         </div>
         <div class="card-col">
-          <p class="gasto">WBF devolución</p>
+          <p class="gasto">{{ data?.ingreso_card?.mensaje }}</p>
         </div>
       </div>
     </div>
