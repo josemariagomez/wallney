@@ -42,7 +42,6 @@ export class IngresosPage implements OnInit {
       cssClass: 'half-modal'
     });
     modal.onDidDismiss().then((data)=>{
-      this.items = [];
       this.addIncomes();
     });
     return await modal.present();

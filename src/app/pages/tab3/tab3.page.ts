@@ -52,7 +52,6 @@ export class Tab3Page {
       cssClass: 'half-modal'
     });
     modal.onDidDismiss().then((data)=>{
-      this.data = [];
       this.getData();
     });
     return await modal.present();
