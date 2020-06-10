@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
   }
   
   async login(){
-    this.api.login(this.email, this.password)
+    this.api.login(this.email,this.password)
     .then(async (response) => {
       console.log();
       if (JSON.parse(JSON.stringify(response)).status_code == 500) {
@@ -67,7 +67,7 @@ export class LoginPage implements OnInit {
     const toast = await this.toastController.create({
       message: message,
       position: 'top',
-      duration: 2000
+      duration: 3000
     });
     toast.present();
   }

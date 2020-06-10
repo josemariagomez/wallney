@@ -15,6 +15,7 @@ import { IngresosModalPageModule } from './modals/ingresos-modal/ingresos-modal.
 import { EditarIngresoPageModule } from './modals/editar-ingreso/editar-ingreso.module';
 import { EditarGastoPageModule } from './modals/editar-gasto/editar-gasto.module';
 import { InformationModalPageModule } from './modals/information-modal/information-modal.module';
+import { MetaPageModule } from './modals/meta/meta.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { InformationModalPageModule } from './modals/information-modal/informati
     IngresosModalPageModule,
     EditarIngresoPageModule,
     EditarGastoPageModule,
-    InformationModalPageModule
+    InformationModalPageModule,
+    MetaPageModule
   ],
   providers: [
     StatusBar,

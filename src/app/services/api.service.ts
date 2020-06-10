@@ -89,4 +89,23 @@ export class ApiService {
       observe: 'response'
     }).toPromise();
   }
+
+  async goal(amount){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/goal', {
+      amount: amount* 100
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async getProfile(){
+    let token = await this.storage.get('token') 
+    let url = 'https://wallney.josegm.me/api/get-profile-data';
+    return this.http.get(url,{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
 }

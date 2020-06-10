@@ -44,7 +44,7 @@ export class GastosModalPage implements OnInit {
     const toast = await this.toastController.create({
       message: message,
       position: 'top',
-      duration: 2000
+      duration: 3000
     });
     toast.present();
   }

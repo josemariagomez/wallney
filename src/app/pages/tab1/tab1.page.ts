@@ -46,4 +46,7 @@ export class Tab1Page {
   goIngresos(){
     this.router.navigateByUrl('/ingresos')
   }
+  goAhorros(){
+    this.router.navigateByUrl('/ahorros')
+  }
 }

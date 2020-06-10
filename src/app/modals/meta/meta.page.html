@@ -1,0 +1,11 @@
+<ion-content>
+  <div class="contenido">
+    <h1 class="title">Editar meta</h1>
+    <div expand="full">
+      <ion-input class="amount" type="number" [(ngModel)]="amount" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"></ion-input>
+    </div>
+    <ion-button (click)="editarMeta(amount)" expand="block" shape="round">
+      Editar Meta
+    </ion-button>
+  </div>
+</ion-content>

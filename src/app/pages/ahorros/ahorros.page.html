@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <div class="page">
+
+    <div class="fixed">
+      <div class="nav">
+        <a class="back-btn" (click)="goBack()" ><img src="../../../assets/img/back-button.png" alt=""></a>
+      </div>
+    </div>
+
+    <div class="content">
+      <ion-list class="gastos">
+        <ion-item-sliding ngFor="let i of items" >
+          <ion-item class="gasto"><div class="money">{{ i?.amount }}€</div><div class="desc">{{ i?.date }}</div></ion-item>
+        </ion-item-sliding>
+      </ion-list>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>

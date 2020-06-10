@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
-  <div class="content">
-    <p class="date"> 01 may. - 09 may.</p>
+  <div class="content" >
+    <p class="date"> {{ data?.fecha }}</p>
     <div class="cabecera">
       <div class="cab-col">
         <p class="g">Gastos</p>
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="card-4">
+    <div class="card-4" (click)="goAhorros()">
       <div class="card main-card">
         <div class="months">
           <div class="card-col">
@@ -72,7 +72,7 @@
               <p class="text-a">Ahorro mes pasado</p>
               <p class="ahorros">Ver ahorros</p>
             </div>
-            <p class="money">570,71€</p>
+            <p class="money">{{ data?.mes_pasado }}€</p>
           </div>
         </div>
       </div>
