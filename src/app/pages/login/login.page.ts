@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
   }
   
   async login(){
-    this.router.navigate(['/tabs/tab1'])
+    this.api.login(this.email,this.password)
     .then(async (response) => {
       console.log();
       if (JSON.parse(JSON.stringify(response)).status_code == 500) {

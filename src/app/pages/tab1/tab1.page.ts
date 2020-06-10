@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
+  date: any;
+
   constructor(private router: Router) {}
 
   ngOnInit(){
