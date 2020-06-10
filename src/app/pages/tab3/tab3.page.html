@@ -3,13 +3,13 @@
     <p class="date"></p>
     <div class="cabecera">
       <div class="cab-col">
-        <p class="g">{{ user.name }}</p>
+        <p class="g">{{ user?.name }}</p>
       </div>
       <div class="cab-col">
-        <p class="i">@{{ user.username }}</p>
+        <p class="i">@{{ user?.username }}</p>
       </div>
     </div>
-    <div class="card-2 main-card card" (click)="goGastos()">
+    <div class="card-2 main-card card">
       <div class="card-row flex-center">
         <div class="card-col">
           <p class="gastos">Meta mensual</p>
@@ -17,10 +17,10 @@
       </div>
       <div class="card-row">
         <div class="card-col">
-          <p class="money">14,30€</p>
+          <p class="money">{{ data?.meta }}€</p>
         </div>
         <div class="card-col">
-        <p class="gasto">Editar</p>
+        <p class="gasto" (click)="presentModal()">Editar</p>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
             <p class="text">Total gastado</p>
           </div>
           <div class="card-col">
-            <p class="money">14,30€</p>
+            <p class="money">{{ data?.gastos }}€</p>
           </div>
         </div>
         <div class="card-row">
@@ -39,7 +39,7 @@
             <p class="text">Total ingresado</p>
           </div>
           <div class="card-col">
-            <p class="money">14,30€</p>
+            <p class="money">{{ data?.ingresos }}€</p>
           </div>
         </div>
         <div class="card-row">
@@ -47,12 +47,12 @@
             <p class="text">Total ahorrado</p>
           </div>
           <div class="card-col">
-            <p class="money">14,30€</p>
+            <p class="money">{{ data?.ahorros }}€</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card-2 main-card card">
+    <div class="card-2 main-card card" (click)="goReset()">
       <div class="card-row flex-center">
         <div class="card-col">
           <p class="text-m">Cambiar contraseña</p>
@@ -71,7 +71,7 @@
       <div class="smal-btn">
         <div class="card-small main-card card">
           <div class="card-row flex-center">
-            <p class="gastos">Editar perfil</p>
+            <a href="https://wallney.josegm.me" target="_blank" class="gastos">Ver Web</a>
           </div>
         </div>
       </div>

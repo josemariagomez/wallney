@@ -54,6 +54,14 @@ const routes: Routes = [
   },  {
     path: 'editar-ingreso',
     loadChildren: () => import('./modals/editar-ingreso/editar-ingreso.module').then( m => m.EditarIngresoPageModule)
+  },
+  {
+    path: 'ahorros',
+    loadChildren: () => import('./pages/ahorros/ahorros.module').then( m => m.AhorrosPageModule)
+  },
+  {
+    path: 'meta',
+    loadChildren: () => import('./modals/meta/meta.module').then( m => m.MetaPageModule)
   }
 
 

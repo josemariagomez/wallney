@@ -9,14 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class Tab1Page {
 
-<<<<<<< HEAD
-  date: any;
-
-  constructor(private router: Router) {}
-=======
   data;
   routerSubscription;
->>>>>>> cd067ccd7bef4da4cb462a863acda25ff2b5e5d2
 
   constructor(private router: Router, public api: ApiService) {}
 
@@ -51,5 +45,8 @@ export class Tab1Page {
   }
   goIngresos(){
     this.router.navigateByUrl('/ingresos')
+  }
+  goAhorros(){
+    this.router.navigateByUrl('/ahorros')
   }
 }
