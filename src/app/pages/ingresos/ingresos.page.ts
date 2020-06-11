@@ -17,6 +17,7 @@ export class IngresosPage implements OnInit {
   items = [];
   currentPage;
   lastPage;
+  data;
 
   constructor(
     private router: Router,
@@ -63,7 +64,12 @@ export class IngresosPage implements OnInit {
   async addIncomes(page = null){
     let response = await this.api.getIncomes(page);
     let responseJson = JSON.parse(JSON.stringify(response)).body
-    let incomes = responseJson.data;
+    let incomes = responseJson.data.data;
+    this.data = responseJson;
+    console.log("data");
+    
+    console.log(responseJson);
+    
     if (!page) {
       incomes.forEach(element => {
         this.items.push(element)
@@ -71,8 +77,8 @@ export class IngresosPage implements OnInit {
     } else {
       this.items = incomes
     }
-    this.currentPage = responseJson.current_page;
-    this.lastPage = responseJson.last_page;
+    this.currentPage = responseJson.data.current_page;
+    this.lastPage = responseJson.data.last_page;
   }
 
   goBack(){
@@ -89,9 +95,6 @@ export class IngresosPage implements OnInit {
   }
 
   async showInfo(id:any,title:any,description:any,amount:any,date:any){
-    console.log(id);
-    console.log(description);
-    console.log(amount);
     const modal = await this.modalController.create({
       component: InformationModalPage,
       componentProps:{id:id,title:title,description:description,amount:amount,date:date},

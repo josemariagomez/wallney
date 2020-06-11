@@ -7,22 +7,23 @@
       </div>
       <div class="page-data">
         <p class="page-name">Gastos</p>
-        <p class="page-date">01 may. - 09 may.</p>
+        <p class="page-date">{{ data?.fecha }}</p>
       </div>
       <div class="content">
         <div class="card main-card">
           <div class="months">
             <div class="card-col">
-              <p class="money">20€</p>
+              <p class="money">{{ data?.mes_pasado }}€</p>
               <p class="month">Mes pasado</p>
             </div>
             <div class="card-col">
-              <p class="money">50€</p>
+              <p class="money">{{ data?.este_mes }}€</p>
               <p class="month">Este mes</p>
             </div>
           </div>
           <div class="sentence">
-            <p>Has gastado <span class="money">30€</span> más que el mes pasado</p>
+            <p *ngIf="data?.diferencia > 0">Has gastado <span class="money">{{ data?.diferencia }}€</span> más que el mes pasado.</p>
+            <p *ngIf="data?.diferencia < 0">Has gastado <span class="money">{{ data?.diferencia * -1 }}€</span> menos que el mes pasado. 🔥</p>
           </div>
         </div>
       </div>

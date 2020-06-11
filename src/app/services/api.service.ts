@@ -147,5 +147,7 @@ export class ApiService {
     return this.http.post('https://wallney.josegm.me/api/incomes/' + id + '/destroy', {},{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
       observe: 'response'
-    }).toPromise();  }
+    }).toPromise();  
+  }
+
 }

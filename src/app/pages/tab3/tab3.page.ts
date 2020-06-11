@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Storage } from '@ionic/storage'
 import { ModalController, ToastController } from '@ionic/angular';
 import { MetaPage } from 'src/app/modals/meta/meta.page';
@@ -16,6 +16,7 @@ export class Tab3Page {
 
   user;
   data;
+  routerSubscription;
 
   constructor(
     private router: Router,
@@ -30,6 +31,7 @@ export class Tab3Page {
     this.user = user;
 
     this.getData();
+    this.routerWatch();
   }
 
   getData(){
@@ -57,6 +59,16 @@ export class Tab3Page {
     return await modal.present();
   }
   
+  routerWatch() {
+    this.routerSubscription = this.router.events.subscribe(
+      (event: NavigationEnd) => {
+        if(event instanceof NavigationEnd) {
+            this.getData();
+        }
+      }
+    );
+  }
+
   async goReset(){
     let user = await this.storage.get('user')
     this.api.resetpassword(user.email).then(()=>{

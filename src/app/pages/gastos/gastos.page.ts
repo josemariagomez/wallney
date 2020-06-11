@@ -16,6 +16,7 @@ export class GastosPage implements OnInit {
   items = [];
   currentPage;
   lastPage;
+  data;
 
   constructor(
     private router: Router,
@@ -38,7 +39,8 @@ export class GastosPage implements OnInit {
   async addExpenses(page = null){
     let response = await this.api.getExpenses(page);
     let responseJson = JSON.parse(JSON.stringify(response)).body
-    let incomes = responseJson.data;
+    let incomes = responseJson.data.data;
+    this.data = responseJson
     if (!page) {
       incomes.forEach(element => {
         this.items.push(element)
@@ -46,8 +48,8 @@ export class GastosPage implements OnInit {
     } else {
       this.items = incomes
     }
-    this.currentPage = responseJson.current_page;
-    this.lastPage = responseJson.last_page;
+    this.currentPage = responseJson.data.current_page;
+    this.lastPage = responseJson.data.last_page;
   }
 
   goBack(){

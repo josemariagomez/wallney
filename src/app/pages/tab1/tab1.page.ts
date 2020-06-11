@@ -22,7 +22,6 @@ export class Tab1Page {
     this.routerSubscription = this.router.events.subscribe(
       (event: NavigationEnd) => {
         if(event instanceof NavigationEnd) {
-            this.data = '';
             this.getData();
         }
       }

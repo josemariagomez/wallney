@@ -24,7 +24,8 @@
           </div>
         </div>
         <div class="sentence">
-          <p>¡Estás consiguiendo tu meta de ahorros!🎉</p>
+          <p *ngIf="data?.main_card?.ahorro > data?.main_card?.meta ">¡Estás consiguiendo tu meta! 🎉</p>
+          <p *ngIf="data?.main_card?.ahorro < data?.main_card?.meta ">No estas consiguiendo tu meta 😢</p>
         </div>
       </div>
     </div>
