@@ -53,6 +53,9 @@ export class IngresosPage implements OnInit {
       component: EditarIngresoPage,
       componentProps:{id:id,title:title,description:description,amount:amount,date:date},
       cssClass: 'half-modal'
+    });modal.onDidDismiss().then((data)=>{
+      this.items=[];
+      this.addIncomes();
     });
     return await modal.present();
   }
@@ -61,9 +64,13 @@ export class IngresosPage implements OnInit {
     let response = await this.api.getIncomes(page);
     let responseJson = JSON.parse(JSON.stringify(response)).body
     let incomes = responseJson.data;
-    incomes.forEach(element => {
-      this.items.push(element)
-    });
+    if (!page) {
+      incomes.forEach(element => {
+        this.items.push(element)
+      });
+    } else {
+      this.items = incomes
+    }
     this.currentPage = responseJson.current_page;
     this.lastPage = responseJson.last_page;
   }
@@ -91,5 +98,13 @@ export class IngresosPage implements OnInit {
       cssClass: 'half-modal'
     });
     return await modal.present();
+  }
+
+  deleteIncome(id){
+    this.api.deleteExpense(id).then(()=>{
+      this.presentToast('Se ha borrado su ingreso.')
+    }).catch((error)=>{
+      this.presentToast(error)
+    })
   }
 }

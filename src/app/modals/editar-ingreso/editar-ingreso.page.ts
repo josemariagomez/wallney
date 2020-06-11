@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-editar-ingreso',
@@ -15,7 +16,9 @@ export class EditarIngresoPage implements OnInit {
   @Input('date') date;
 
   constructor(
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    public api: ApiService,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -25,6 +28,21 @@ export class EditarIngresoPage implements OnInit {
     this.modalCtrl.dismiss({
       'dismissed': true
     });
+  }
+  async editExpense(){
+    this.api.editIncomes(this.title,this.description,this.amount,this.date,this.id).then(()=>{
+      this.dismiss()
+    }).catch((error)=>{
+      this.presentToast(error);
+    })
+  }
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      position: 'top',
+      duration: 3000
+    });
+    toast.present();
   }
 
 }

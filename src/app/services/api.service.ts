@@ -108,4 +108,44 @@ export class ApiService {
       observe: 'response'
     }).toPromise();
   }
+
+  async editExpenses(title,description,amount,date,id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/expenses/' + id + '/update', {
+      title: title,
+      description: description,
+      amount: amount,
+      date: date
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async editIncomes(title,description,amount,date,id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/incomes/'+ id + '/update', {
+      title: title,
+      description: description,
+      amount: amount,
+      date: date
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+  async deleteExpense(id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/expenses/' + id + '/destroy', {},{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async deleteIncomes(id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/incomes/' + id + '/destroy', {},{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();  }
 }
