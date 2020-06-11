@@ -98,9 +98,9 @@ export class GastosPage implements OnInit {
   deleteExpense(id){
     this.api.deleteExpense(id).then(()=>{
       this.presentToast('Se ha borrado su gasto.')
-    }).catch((error)=>{
       this.addExpenses();
-      this.presentToast(error)
+    }).catch((error)=>{
+      this.presentToast('Error al eliminar su gasto')
     })
   }
   async presentToast(message: string) {

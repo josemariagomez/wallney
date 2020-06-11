@@ -104,10 +104,11 @@ export class IngresosPage implements OnInit {
   }
 
   deleteIncome(id){
-    this.api.deleteExpense(id).then(()=>{
-      this.presentToast('Se ha borrado su ingreso.')
-    }).catch((error)=>{
-      this.presentToast(error)
+    this.api.deleteIncomes(id).then(()=>{
+      this.presentToast('Se ha borrado su ingreso.');
+      this.addIncomes();
+    }).catch(()=>{
+      this.presentToast('Error al borrar')
     })
   }
 }
