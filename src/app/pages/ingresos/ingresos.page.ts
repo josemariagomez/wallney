@@ -98,7 +98,7 @@ export class IngresosPage implements OnInit {
     const modal = await this.modalController.create({
       component: InformationModalPage,
       componentProps:{id:id,title:title,description:description,amount:amount,date:date},
-      cssClass: 'half-modal'
+      cssClass: 'half2-modal'
     });
     return await modal.present();
   }

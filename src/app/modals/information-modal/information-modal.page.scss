@@ -1,0 +1,22 @@
+ion-content{
+    text-align: center;
+    .title{
+        font-weight: bold;
+        color: #3BF0D0;
+        padding: 0rem 1rem;
+    }
+    .date{
+        padding: 0rem 1rem;
+        text-align: right;
+        font-size: 0.9em;
+        color: #3BF0D0;
+    }
+    .description{
+        padding: 0rem 1rem;
+        color: #3BF0D0;
+    }
+    .amount{
+        padding: 0rem 1rem;
+        color: #3BF0D0;
+    }
+}

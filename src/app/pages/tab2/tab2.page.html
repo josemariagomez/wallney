@@ -1,3 +1,30 @@
-<ion-content>
+<ion-content class="ion-padding">
+    <div class="page">
+      <div class="fixed">
+        <div class="nav">
+            <a class="add-btn" (click)="addGroup()"><img src="../../../assets/img/add-button.png" alt=""></a>
+        </div>
+      </div>
   
-</ion-content>
+      <div class="content">
+        <ion-list class="gastos">
+          <!--<ion-item-sliding *ngFor="let i of items" >
+            <ion-item class="gasto"><div class="money">{{i.amount}}€</div><div class="desc">{{i.title}}</div></ion-item>
+          </ion-item-sliding>-->
+          <ion-item (click)="goGroup()" class="gasto"><div class="money">1€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">2€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">3€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">4€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">5€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">1€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">2€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">3€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">4€</div><div class="desc">hds</div></ion-item>
+          <ion-item class="gasto"><div class="money">5€</div><div class="desc">hds</div></ion-item>
+        </ion-list>
+        <ion-infinite-scroll>
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </div>
+    </div>
+  </ion-content>

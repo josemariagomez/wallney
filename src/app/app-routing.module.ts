@@ -62,6 +62,14 @@ const routes: Routes = [
   {
     path: 'meta',
     loadChildren: () => import('./modals/meta/meta.module').then( m => m.MetaPageModule)
+  },
+  {
+    path: 'anadir-grupo',
+    loadChildren: () => import('./modals/anadir-grupo/anadir-grupo.module').then( m => m.AnadirGrupoPageModule)
+  },
+  {
+    path: 'grupo',
+    loadChildren: () => import('./pages/grupo/grupo.module').then( m => m.GrupoPageModule)
   }
 
 

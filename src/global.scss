@@ -36,6 +36,13 @@
     position: absolute;
     display: block;
 }
+.half2-modal .modal-wrapper{
+    border-radius: 10px 10px 0 0 ;
+    height: 25%;
+    top:75%;
+    position: absolute;
+    display: block;
+}
 .item-interactive.ion-valid{
     --highlight-background:white;
 }
