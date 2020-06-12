@@ -35,12 +35,18 @@ export class AnadirGrupoPage implements OnInit {
       this.dismiss()
     })
     .catch(async (error) => {
-      await this.presentToast(error);   
+      await this.presentToast(error.error);   
     });
   }
 
   joinGroup(){
-
+    this.api.joinGroup(this.uuid)
+    .then((response) => {
+      this.dismiss()
+    })
+    .catch(async (error) => {
+      await this.presentToast(error.error);   
+    });
   }
 
   async presentToast(message: string) {

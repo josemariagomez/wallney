@@ -12,7 +12,7 @@
               <p>Editar</p>
             </div>
         <ion-list class="gastos">
-            <ion-item *ngFor="let i of items" class="gasto">
+            <ion-item (click)="goGroup(i.id)" *ngFor="let i of items" class="gasto">
               <div class="money">{{ i?.amount }}€</div>
               <div class="desc">{{ i?.name }}</div>
             </ion-item>

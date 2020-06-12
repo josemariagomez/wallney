@@ -51,7 +51,8 @@ const routes: Routes = [
   {
     path: 'editar-gasto',
     loadChildren: () => import('./modals/editar-gasto/editar-gasto.module').then( m => m.EditarGastoPageModule)
-  },  {
+  },
+  {
     path: 'editar-ingreso',
     loadChildren: () => import('./modals/editar-ingreso/editar-ingreso.module').then( m => m.EditarIngresoPageModule)
   },
@@ -68,9 +69,13 @@ const routes: Routes = [
     loadChildren: () => import('./modals/anadir-grupo/anadir-grupo.module').then( m => m.AnadirGrupoPageModule)
   },
   {
-    path: 'grupo',
+    path: 'grupo/:id',
     loadChildren: () => import('./pages/grupo/grupo.module').then( m => m.GrupoPageModule)
+  },  {
+    path: 'edit-group',
+    loadChildren: () => import('./modals/edit-group/edit-group.module').then( m => m.EditGroupPageModule)
   }
+
 
 
 

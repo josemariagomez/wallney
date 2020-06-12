@@ -81,15 +81,13 @@ export class GastosPage implements OnInit {
   }
 
   async editExpense(id:any,title:any,description:any,amount:any,date:any){
-    console.log(id);
-    console.log(description);
-    console.log(amount);
     const modal = await this.modalController.create({
       component: EditarGastoPage,
       componentProps:{id:id,title:title,description:description,amount:amount,date:date},
       cssClass: 'half-modal'
     });
     modal.onDidDismiss().then((data)=>{
+      this.items =[];
       this.addExpenses();
     });
     return await modal.present();
@@ -98,6 +96,7 @@ export class GastosPage implements OnInit {
   deleteExpense(id){
     this.api.deleteExpense(id).then(()=>{
       this.presentToast('Se ha borrado su gasto.')
+      this.items = [];
       this.addExpenses();
     }).catch((error)=>{
       this.presentToast('Error al eliminar su gasto')

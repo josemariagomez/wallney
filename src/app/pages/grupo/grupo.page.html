@@ -2,7 +2,7 @@
    <div class="content" >
     <div class="top">
       <a class="back-btn" (click)="goBack()"><img src="../../../assets/img/back-button.png" alt=""></a>
-      <p class="date"> {{ data?.uuid }}45464</p>
+      <p class="date"> {{ data?.uuid }}</p>
     </div>
     <div class="cabecera">
       <div class="cab-col">
@@ -15,12 +15,12 @@
       </div>
     </div>
     <ion-list class="gastos">
-      <div class="gasto center" *ngIf="data?.admin">
+      <div (click)="goEdit(data?.amount,data?.name,data?.id)" class="gasto center" *ngIf="admin">
         <p>Editar</p>
       </div>
-      <ion-item ngFor="let i of items" class="gasto">
-        <div class="money">{{ i?.amount }}€</div>
-        <div class="desc">{{ i?.date }}</div>
+      <ion-item *ngFor="let i of items" class="gasto">
+        <div class="money">{{ i?.money }}€</div>
+        <div class="desc">{{ i?.username }}</div>
       </ion-item>
     </ion-list>
   </div>

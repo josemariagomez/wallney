@@ -6,10 +6,10 @@
     </div>
     <div class="double">
       <div class="left">
-        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="Ej:1000,00" type="number" [(ngModel)]="amount"></ion-input>
+        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="Meta (€)" type="number" [(ngModel)]="amount"></ion-input>
       </div>
       <div class="left">
-        <ion-input  ng-pattern="^\d+$" class="amount" placeholder="Porcentaje(%)" type="number" [(ngModel)]="percent"></ion-input>
+        <ion-input  ng-pattern="^\d+$" class="amount" placeholder="Porcentaje (%)" type="number" [(ngModel)]="percent"></ion-input>
       </div>
     </div>
     <ion-button (click)="createGroup()" expand="block" shape="round">

@@ -61,7 +61,7 @@ export class Tab2Page {
     });
     return await modal.present();
   }
-  goGroup(){
-    this.router.navigateByUrl('/grupo')
+  goGroup(id){
+    this.router.navigateByUrl('/grupo/' + id )
   }
 }

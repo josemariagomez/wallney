@@ -114,7 +114,7 @@ export class ApiService {
     return this.http.post('https://wallney.josegm.me/api/expenses/' + id + '/update', {
       title: title,
       description: description,
-      amount: amount,
+      amount: amount * 100,
       date: date
     },{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
