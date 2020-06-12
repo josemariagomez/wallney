@@ -150,4 +150,66 @@ export class ApiService {
     }).toPromise();  
   }
 
+  async getGroups(){
+    let token = await this.storage.get('token') 
+    return this.http.get('https://wallney.josegm.me/api/grupos/',{
+    headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+    observe: 'response'
+  }).toPromise();  
+  }
+
+  async createGroup(name,target,money,percent){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/grupos/store', {
+      name: name,
+      target: target,
+      money: money,
+      percent: percent
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async joinGroup(name,target,money,percent,id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/join', {
+      name: name,
+      target: target,
+      money: money,
+      percent: percent
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async getGroup(id){
+    let token = await this.storage.get('token') 
+    return this.http.get('https://wallney.josegm.me/api/grupos/' + id,{
+    headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+    observe: 'response'
+  }).toPromise();
+  }
+
+  async editOneGroup(name,target,money,percent,id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/update', {
+      name: name,
+      target: target,
+      money: money,
+      percent: percent
+    },{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
+
+  async deleteGroup(id){
+    let token = await this.storage.get('token') 
+    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/destroy', {},{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
+      observe: 'response'
+    }).toPromise();
+  }
 }
