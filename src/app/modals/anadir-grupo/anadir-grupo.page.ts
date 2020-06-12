@@ -28,6 +28,7 @@ export class AnadirGrupoPage implements OnInit {
       'dismissed': true
     });
   }
+  
   createGroup(){
     this.amount = this.amount * 100;
     this.api.createGroup(this.name,this.percent,this.amount)

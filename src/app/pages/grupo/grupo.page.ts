@@ -58,7 +58,7 @@ export class GrupoPage implements OnInit {
   }
 
   deleteGroup(){
-    
+    this.presentAlert();
   }
 
   async presentAlert() {
@@ -81,6 +81,7 @@ export class GrupoPage implements OnInit {
               this.items=[];
               this.getGroup();
               this.presentToast('Se ha eliminado el grupo correctamente.');
+              this.router.navigateByUrl('/tabs/tab2')
             }).catch(()=>{
               this.presentToast('No se ha podido eliminar, error con el servidor.')
             })
