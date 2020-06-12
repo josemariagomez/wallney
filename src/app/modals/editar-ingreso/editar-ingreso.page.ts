@@ -34,7 +34,7 @@ export class EditarIngresoPage implements OnInit {
     this.api.editIncomes(this.title,this.description,this.amount,this.date,this.id).then(()=>{
       this.dismiss()
     }).catch((error)=>{
-      this.presentToast(error);
+      this.presentToast('Fallo al editar, compruebe el formulario.');
     })
   }
   async presentToast(message: string) {

@@ -34,7 +34,7 @@ export class EditarGastoPage implements OnInit {
     this.api.editExpenses(this.title,this.description,this.amount,this.date,this.id).then(()=>{
       this.dismiss()
     }).catch((error)=>{
-      this.presentToast(error);
+      this.presentToast('Fallo al editar, compruebe el formulario.');
     })
   }
   async presentToast(message: string) {

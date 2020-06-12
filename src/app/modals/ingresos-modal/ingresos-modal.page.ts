@@ -35,7 +35,7 @@ export class IngresosModalPage implements OnInit {
       this.dismiss()
     })
     .catch(async (error) => {
-      await this.presentToast(error);   
+      await this.presentToast('Fallo al crear un ingreso, compruebe el formulario.');   
     });
   }
 

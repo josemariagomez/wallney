@@ -35,7 +35,7 @@ export class GastosModalPage implements OnInit {
       this.dismiss()
     })
     .catch(async (error) => {
-      await this.presentToast(error);   
+      await this.presentToast('Fallo al crear un gasto, comprueba el formulario.');   
     });
   }
 
