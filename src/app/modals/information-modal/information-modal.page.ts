@@ -16,5 +16,6 @@ export class InformationModalPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.date = new Date(this.date).toLocaleDateString('es')
   }
 }
