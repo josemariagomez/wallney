@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>edit-group</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <div class="contenido">
+    <h3>Crear grupo</h3>
+    <div expand="full">
+      <ion-input class="title" placeholder="Nombre de Grupo" type="text" [(ngModel)]="name"></ion-input>
+    </div>
+    <div class="double">
+      <div class="left">
+        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="Meta (€)" type="number" [(ngModel)]="amount"></ion-input>
+      </div>
+    </div>
+    <ion-button (click)="createGroup()" expand="block" shape="round">
+      Editar Grupo
+    </ion-button>
+    <ion-button class="delete" (click)="joinGroup()" expand="block" shape="round">
+      Borrar Grupo 
+    </ion-button>
+  </div>
 </ion-content>

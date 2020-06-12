@@ -35,7 +35,7 @@
           <ion-item (click)="showInfo(i.id,i.title,i.description,i.amount,i.date)" class="gasto"><div class="money">{{i.amount}}€</div><div class="desc">{{i.title}}</div></ion-item>
           
           <ion-item-options side="start" id="left">
-            <ion-item-option (click)="editIncome()" class="boton left">Editar</ion-item-option>
+            <ion-item-option (click)="editIncome(i.id,i.title,i.description,i.amount,i.date)" class="boton left">Editar</ion-item-option>
           </ion-item-options>
     
           <ion-item-options side="end" id="right">

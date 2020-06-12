@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit-group',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-group.page.scss'],
 })
 export class EditGroupPage implements OnInit {
+
+  @Input('id') id;
+  @Input('amount') amount;
+  @Input('title') name;
 
   constructor() { }
 

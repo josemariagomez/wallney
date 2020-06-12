@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api.service';
+import { title } from 'process';
 
 @Component({
   selector: 'app-editar-ingreso',
@@ -29,7 +30,7 @@ export class EditarIngresoPage implements OnInit {
       'dismissed': true
     });
   }
-  async editExpense(){
+  async editIncome(){
     this.api.editIncomes(this.title,this.description,this.amount,this.date,this.id).then(()=>{
       this.dismiss()
     }).catch((error)=>{

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController, ToastController } from '@ionic/angular';
+import { EditGroupPage } from 'src/app/modals/edit-group/edit-group.page';
 
 @Component({
   selector: 'app-grupo',
@@ -14,7 +15,9 @@ export class GrupoPage implements OnInit {
     private router: Router,
     public api: ApiService,
     private modalController: ModalController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertController: AlertController,
+    private toastController: ToastController
   ) { }
 
   data;
@@ -37,12 +40,64 @@ export class GrupoPage implements OnInit {
       this.data = responseJson.group;
       this.items = responseJson.users;
       this.admin = responseJson.admin;
-
+      console.log(responseJson);
+      
     })
   }
 
-  goEdit(amount,name,id){
+  async goEdit(amount,name,id){
+    const modal = await this.modalController.create({
+      component: EditGroupPage,
+      componentProps:{amount:amount,name:name,id:id},
+      cssClass: 'half2-modal'
+    });
+    modal.onDidDismiss().then((data)=>{
+      this.items =[];
+      this.getGroup();
+    });
+  }
+
+  deleteGroup(){
     
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: '¿Seguro que desea borrar el grupo?',
+      message: 'Perderas todo los datos, tanto tu como los participantes del grupo.',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+
+          }
+        }, {
+          text: 'Borrar',
+          handler: () => {
+            this.api.deleteGroup(this.id).then(()=>{
+              this.items=[];
+              this.getGroup();
+              this.presentToast('Se ha eliminado el grupo correctamente.');
+            }).catch(()=>{
+              this.presentToast('No se ha podido eliminar, error con el servidor.')
+            })
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      position: 'top',
+      duration: 3000
+    });
+    toast.present();
+  }
 }

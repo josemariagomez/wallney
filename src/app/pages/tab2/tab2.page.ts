@@ -40,14 +40,13 @@ export class Tab2Page {
   async getGroups(){
     let response = await this.api.getGroups();
     let groups = JSON.parse(JSON.stringify(response)).body
+    
     this.items = groups
     if(groups.length <= 0){
       this.noItems = true;
     }else{
       this.noItems = false;
     }
-    console.log(groups);
-    console.log(this.items);
   }
 
   async addGroup(){

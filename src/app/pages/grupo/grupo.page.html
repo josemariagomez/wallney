@@ -15,13 +15,13 @@
       </div>
     </div>
     <ion-list class="gastos">
-      <div (click)="goEdit(data?.amount,data?.name,data?.id)" class="gasto center" *ngIf="admin">
-        <p>Editar</p>
-      </div>
       <ion-item *ngFor="let i of items" class="gasto">
         <div class="money">{{ i?.money }}€</div>
         <div class="desc">{{ i?.username }}</div>
       </ion-item>
+      <ion-button *ngIf="admin" (click)="deleteGroup()" expand="block" shape="round" class="delete">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
     </ion-list>
   </div>
 </ion-content>

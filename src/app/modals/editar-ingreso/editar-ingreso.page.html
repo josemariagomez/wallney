@@ -8,20 +8,20 @@
   <div class="contenido">
     <div expand="full">
       <ion-label><h2><b>Título</b></h2></ion-label>
-      <ion-input class="title" placeholder="Ej:Nómina" type="text" [(ngModel)]="title"></ion-input>
+      <ion-input class="title" placeholder="{{ title }}" type="text" [(ngModel)]="title"></ion-input>
     </div>
     <div expand="full">
       <ion-label><h2><b>Descripción</b></h2></ion-label>
-      <ion-input class="description" placeholder="Ej:Mes de Mayo" type="text" [(ngModel)]="description"></ion-input>
+      <ion-input class="description" placeholder="{{ description }}" type="text" [(ngModel)]="description"></ion-input>
     </div>
     <div class="double">
       <div class="left">
         <ion-label><h2><b>Cantidad</b></h2></ion-label>
-        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="Ej:1000,00" type="number" [(ngModel)]="amount"></ion-input>
+        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="{{ amount }}" type="number" [(ngModel)]="amount"></ion-input>
       </div>
       <div class="right">
         <ion-label><h2><b>Fecha</b></h2></ion-label>
-        <ion-datetime  displayFormat="DD-MM-YYYY" class="date" value="dd-mm-YYYY" [(ngModel)]="date"></ion-datetime>
+        <ion-datetime  displayFormat="DD-MM-YYYY" class="date" value="{{ date }}" [(ngModel)]="date"></ion-datetime>
       </div>
     </div>
     <ion-button (click)="editIncome()" expand="block" shape="round">

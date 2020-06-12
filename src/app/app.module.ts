@@ -17,6 +17,7 @@ import { EditarGastoPageModule } from './modals/editar-gasto/editar-gasto.module
 import { InformationModalPageModule } from './modals/information-modal/information-modal.module';
 import { MetaPageModule } from './modals/meta/meta.module';
 import { AnadirGrupoPageModule } from './modals/anadir-grupo/anadir-grupo.module';
+import { EditGroupPageModule } from './modals/edit-group/edit-group.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +34,8 @@ import { AnadirGrupoPageModule } from './modals/anadir-grupo/anadir-grupo.module
     EditarGastoPageModule,
     InformationModalPageModule,
     MetaPageModule,
-    AnadirGrupoPageModule
+    AnadirGrupoPageModule,
+    EditGroupPageModule
   ],
   providers: [
     StatusBar,
