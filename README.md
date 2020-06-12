@@ -14,6 +14,8 @@ Hemos utilizado para hacer la aplicación la documentación de ionic:
 <a href="https://ionicframework.com/docs">Documentación de Ionic</a>
 
 ## Enlaces
+<a href="https://wallney.josegm.me">Entra a la web</a>
+
 <a href="https://www.figma.com/file/62lc9vVuLk1LhKubTT0iSw/Wallney?node-id=5%3A4">Diseño en Figma</a>
 
 <a href="https://wallney.josegm.me/download/wallney.pdf">Descargar presentación PDF</a>
