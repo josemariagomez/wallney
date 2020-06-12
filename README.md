@@ -6,13 +6,6 @@ de ahorro el cual tu eliges.
 ¿Te parece aburrido? Pues no te preocupes ahora puedes crear un grupo con tus amigos y competir entre vosotros a ver quien es el 
 más ahorrador.
 
-Video mostrando demo de al App <a href="https://youtu.be/XzsCSpO4X5o"> aquí </a>
-
-Si desea probar una demo de la aplicación puede descargarse el archivo .apk que se encuentra <a href="https://github.com/josemariagomez/wallney">aquí</a>.
-
-Hemos utilizado para hacer la aplicación la documentación de ionic:
-<a href="https://ionicframework.com/docs">Documentación de Ionic</a>
-
 ## Enlaces
 <a href="https://wallney.josegm.me">Entra a la web</a>
 
@@ -21,3 +14,7 @@ Hemos utilizado para hacer la aplicación la documentación de ionic:
 <a href="https://wallney.josegm.me/download/wallney.pdf">Descargar presentación PDF</a>
 
 <a href="https://wallney.josegm.me/download/wallney.apk">Descargar APK</a>
+
+<a href="https://youtu.be/56E5PyL-uuY">Vídeo informativo</a>
+
+<a href="https://ionicframework.com/docs">Documentación de Ionic</a>
