@@ -15,5 +15,7 @@ Hemos utilizado para hacer la aplicación la documentación de ionic:
 
 ## Enlaces
 <a href="https://www.figma.com/file/62lc9vVuLk1LhKubTT0iSw/Wallney?node-id=5%3A4">Diseño en Figma</a>
-<a href="https://wallney.josegm.me/download/pdf">Descargar presentación PDF</a>
+
+<a href="https://wallney.josegm.me/download/wallney.pdf">Descargar presentación PDF</a>
+
 <a href="https://wallney.josegm.me/download/apk">Descargar APK</a>
