@@ -1,0 +1,115 @@
+ion-content {
+  --background: #fff;
+  --background: none;
+  background-image: url("../../../assets/img/fondo.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+* {
+  color: #3bf0d0;
+}
+.item-inner {
+  border: none !important;
+  --border: none !important;
+}
+.back-btn {
+  width: 1rem;
+}
+.content {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+.cab-col {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+.right {
+  text-align: start;
+}
+.date {
+  color: white;
+}
+.cabecera {
+  * {
+    color: #ffffff;
+  }
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding-top: 1.5rem;
+  .g {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+
+    font-weight: bold;
+    margin: 0;
+  }
+  .money-g {
+    display: flex;
+    padding: 0 1rem;
+
+    font-weight: bold;
+    margin: 0;
+  }
+  .i {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+
+    font-weight: bold;
+  }
+  .money-i {
+    display: flex;
+    padding: 0 1rem;
+
+    font-weight: bold;
+  }
+}
+    .gastos {
+      background-color: transparent;
+      padding: 0 0.5rem;
+  
+      .gasto {
+          background-color: #FFF;
+          border-radius: 10px;
+          padding: 1.2rem;
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+          color: #3BF0D0;
+          margin: 1.5rem 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          .money {
+              font-size: 1.7rem;
+              font-weight: bold;
+          }
+          &.center{
+            text-align: center;
+          }
+      }
+      .desc {
+          padding-left: 2rem;
+      }
+    }

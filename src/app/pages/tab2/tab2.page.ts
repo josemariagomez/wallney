@@ -12,8 +12,9 @@ import { AnadirGrupoPage } from 'src/app/modals/anadir-grupo/anadir-grupo.page';
 export class Tab2Page {
 
   routerSubscription;
+  noItems = true;
   items = [];
-  data;
+
   constructor(
     private router: Router,
     public api: ApiService,
@@ -21,6 +22,7 @@ export class Tab2Page {
   ) {}
 
   ngOnInit(){
+    this.getGroups();
     this.routerWatch();
   }
     
@@ -29,23 +31,24 @@ export class Tab2Page {
     this.routerSubscription = this.router.events.subscribe(
       (event: NavigationEnd) => {
         if(event instanceof NavigationEnd) {
-            //this.data = '';
-            //this.getData();
-            //infiniteScroll.target.complete();
+            this.getGroups();
         }
       }
     );
   }
 
-  /*async getMoths(){
-    let response = await this.api.getExpenses(page);
-    let responseJson = JSON.parse(JSON.stringify(response)).body
-    let items = responseJson.data.data;
-    this.data = responseJson
-    items.forEach(element => {
-        this.items.push(element)
-      });
-  }*/
+  async getGroups(){
+    let response = await this.api.getGroups();
+    let groups = JSON.parse(JSON.stringify(response)).body
+    this.items = groups
+    if(groups.length <= 0){
+      this.noItems = true;
+    }else{
+      this.noItems = false;
+    }
+    console.log(groups);
+    console.log(this.items);
+  }
 
   async addGroup(){
     const modal = await this.modalController.create({
@@ -53,8 +56,8 @@ export class Tab2Page {
       cssClass: 'half-modal'
     });
     modal.onDidDismiss().then((data)=>{
-      //this.items=[];
-      //this.getMoths();
+      this.items=[];
+      this.getGroups();
     });
     return await modal.present();
   }

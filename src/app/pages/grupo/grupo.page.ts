@@ -9,7 +9,12 @@ export class GrupoPage implements OnInit {
 
   constructor() { }
 
+  data;
+  items = [];
+  
   ngOnInit() {
   }
+
+
 
 }

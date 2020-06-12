@@ -152,18 +152,17 @@ export class ApiService {
 
   async getGroups(){
     let token = await this.storage.get('token') 
-    return this.http.get('https://wallney.josegm.me/api/grupos/',{
+    return this.http.get('https://wallney.josegm.me/api/groups',{
     headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
     observe: 'response'
   }).toPromise();  
   }
 
-  async createGroup(name,target,money,percent){
+  async createGroup(name,percent,amount){
     let token = await this.storage.get('token') 
-    return this.http.post('https://wallney.josegm.me/api/grupos/store', {
+    return this.http.post('https://wallney.josegm.me/api/groups/store', {
       name: name,
-      target: target,
-      money: money,
+      amount: amount,
       percent: percent
     },{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
@@ -171,13 +170,9 @@ export class ApiService {
     }).toPromise();
   }
 
-  async joinGroup(name,target,money,percent,id){
+  async joinGroup(id_group){
     let token = await this.storage.get('token') 
-    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/join', {
-      name: name,
-      target: target,
-      money: money,
-      percent: percent
+    return this.http.post('https://wallney.josegm.me/api/groups/'+ id_group +'/join', {
     },{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
       observe: 'response'
@@ -186,19 +181,18 @@ export class ApiService {
 
   async getGroup(id){
     let token = await this.storage.get('token') 
-    return this.http.get('https://wallney.josegm.me/api/grupos/' + id,{
+    return this.http.get('https://wallney.josegm.me/api/groups/' + id,{
     headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
     observe: 'response'
   }).toPromise();
   }
 
-  async editOneGroup(name,target,money,percent,id){
+  async editOneGroup(name,target,money,id){
     let token = await this.storage.get('token') 
-    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/update', {
+    return this.http.post('https://wallney.josegm.me/api/groups/'+ id +'/update', {
       name: name,
       target: target,
-      money: money,
-      percent: percent
+      money: money
     },{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
       observe: 'response'
@@ -207,7 +201,7 @@ export class ApiService {
 
   async deleteGroup(id){
     let token = await this.storage.get('token') 
-    return this.http.post('https://wallney.josegm.me/api/grupos/'+ id +'/destroy', {},{
+    return this.http.post('https://wallney.josegm.me/api/groups/'+ id +'/destroy', {},{
       headers: new HttpHeaders({'Authorization': 'Bearer ' + token}),
       observe: 'response'
     }).toPromise();

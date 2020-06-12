@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>anadir-grupo</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <div class="contenido">
+    <h3>Crear grupo</h3>
+    <div expand="full">
+      <ion-input class="title" placeholder="Nombre de Grupo" type="text" [(ngModel)]="name"></ion-input>
+    </div>
+    <div class="double">
+      <div class="left">
+        <ion-input  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" class="amount" placeholder="Ej:1000,00" type="number" [(ngModel)]="amount"></ion-input>
+      </div>
+      <div class="left">
+        <ion-input  ng-pattern="^\d+$" class="amount" placeholder="Porcentaje(%)" type="number" [(ngModel)]="percent"></ion-input>
+      </div>
+    </div>
+    <ion-button (click)="createGroup()" expand="block" shape="round">
+      Crear Grupo
+    </ion-button>
+    <h3>Unirse a un grupo</h3>
+    <div expand="full">
+      <ion-input class="title" placeholder="Id de grupo" type="text" [(ngModel)]="uuid"></ion-input>
+    </div>
+    <ion-button (click)="joinGroup()" expand="block" shape="round">
+      Unirse 
+    </ion-button>
+  </div>
 </ion-content>

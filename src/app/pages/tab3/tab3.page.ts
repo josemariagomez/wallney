@@ -51,7 +51,7 @@ export class Tab3Page {
   async presentModal() {
     const modal = await this.modalController.create({
       component: MetaPage,
-      cssClass: 'half-modal'
+      cssClass: 'half2-modal'
     });
     modal.onDidDismiss().then((data)=>{
       this.getData();

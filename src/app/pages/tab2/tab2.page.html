@@ -7,24 +7,16 @@
       </div>
   
       <div class="content">
+        <h4 *ngIf="noItems" class="noGroups">Aun no tienes grupos ☹️, crea o únete a uno.</h4>
+            <div class="gasto center" *ngIf="data?.admin">
+              <p>Editar</p>
+            </div>
         <ion-list class="gastos">
-          <!--<ion-item-sliding *ngFor="let i of items" >
-            <ion-item class="gasto"><div class="money">{{i.amount}}€</div><div class="desc">{{i.title}}</div></ion-item>
-          </ion-item-sliding>-->
-          <ion-item (click)="goGroup()" class="gasto"><div class="money">1€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">2€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">3€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">4€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">5€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">1€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">2€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">3€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">4€</div><div class="desc">hds</div></ion-item>
-          <ion-item class="gasto"><div class="money">5€</div><div class="desc">hds</div></ion-item>
-        </ion-list>
-        <ion-infinite-scroll>
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
+            <ion-item *ngFor="let i of items" class="gasto">
+              <div class="money">{{ i?.amount }}€</div>
+              <div class="desc">{{ i?.name }}</div>
+            </ion-item>
+          </ion-list>
       </div>
     </div>
   </ion-content>

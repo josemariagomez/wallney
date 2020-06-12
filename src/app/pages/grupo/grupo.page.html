@@ -1,9 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>grupo</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true">
+   <div class="content" >
+    <div class="top">
+      <a class="back-btn" (click)="goBack()"><img src="../../../assets/img/back-button.png" alt=""></a>
+      <p class="date"> {{ data?.uuid }}45464</p>
+    </div>
+    <div class="cabecera">
+      <div class="cab-col">
+        <p class="g">Meta</p>
+        <p class="money-g">{{ data?.amount }}€</p>
+      </div>
+      <div class="cab-col">
+        <p class="i">Porcentaje</p>
+        <p class="money-i">{{ data?.percent }}%</p>
+      </div>
+    </div>
+    <ion-list class="gastos">
+      <div class="gasto center" *ngIf="data?.admin">
+        <p>Editar</p>
+      </div>
+      <ion-item ngFor="let i of items" class="gasto">
+        <div class="money">{{ i?.amount }}€</div>
+        <div class="desc">{{ i?.date }}</div>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

@@ -30,7 +30,6 @@ export class GastosModalPage implements OnInit {
   }
   createExpense(){
     this.amount = this.amount * 100;
-    console.log(this.date)
     this.api.createExpense(this.title, this.description, this.amount, this.date)
     .then((response) => {
       this.dismiss()
