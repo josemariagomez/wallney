@@ -20,4 +20,4 @@ Hemos utilizado para hacer la aplicación la documentación de ionic:
 
 <a href="https://wallney.josegm.me/download/wallney.pdf">Descargar presentación PDF</a>
 
-<a href="https://wallney.josegm.me/download/apk">Descargar APK</a>
+<a href="https://wallney.josegm.me/download/wallney.apk">Descargar APK</a>
