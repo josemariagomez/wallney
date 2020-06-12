@@ -32,10 +32,11 @@ export class RegisterPage implements OnInit {
     .then((response) => {
       this.storage.set('user', JSON.parse(JSON.stringify(response)).user);
       this.storage.set('token', JSON.parse(JSON.stringify(response)).access_token);
-      this.router.navigate(['/tabs/tab1'])
+      this.presentToast('Registrado correctamente, inicie sesión.')
+      this.router.navigate(['/login'])
     })
     .catch(async (error) => {
-      await this.presentToast('Error al registrarte');
+      await this.presentToast('Error al registrarte.');
       console.log(error)      
     });
   }

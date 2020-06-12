@@ -20,6 +20,9 @@ ion-button{
   --background: white;
   color:#3BF0D0;
   z-index: 1;
+  strong{
+    padding: 2rem;
+  }
 }
 h2 {
   color: #000;
